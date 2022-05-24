@@ -1,0 +1,24 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "I will be creating a to dod list app where you can add tasks with due dates and descriptions, and can create projects which are lists of tasks.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Traorasp/ToDoList.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Traorasp/ToDoList/issues"
+  },
+  "homepage": "https://github.com/Traorasp/ToDoList#readme",
+  "devDependencies": {
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2"
+  }
+}
