@@ -1,0 +1,1 @@
+(()=>{"use strict";const e=(()=>{let e=[];return{updateMenu:()=>{console.log(e)},addProject:t=>{e.push((e=>{let t=["wa",9];return{title:e,addToDo:(e,o,d,s)=>{t.push(((e,t,o,d)=>({name:e,desc:t,imp:o,date:d}))(e,o,d,s))},removeToDo:e=>{t.splice(e,1)},toDoList:t}})(t))}}})();e.addProject("bob"),e.updateMenu()})();
