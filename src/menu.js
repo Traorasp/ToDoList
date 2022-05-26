@@ -1,8 +1,7 @@
-import Project from './project.js';
+import {Project, projectList} from './project.js';
+import loadToDoList from './to-do-list.js';
 
 const toDoMenu = (() =>{
-
-    let projectList = [];
 
     //Will load projects and other menu info into DOM tree
     const updateMenu = () => {
@@ -30,11 +29,17 @@ const toDoMenu = (() =>{
         projectList.forEach(project => {
             const projectName = document.createElement('li');
             projectName.textContent = `${project.title}`;
+            projectName.addEventListener('click', (e) => {
+                loadToDoList(findInd(e.target.textContent));
+            });
             projectsDisplay.appendChild(projectName);
         });
-
-
     };
+
+    const findInd = (name) => {
+        return projectList.findIndex((project) => {
+            return `${project.title}` == `${name}`}); 
+    }
 
     //Will add a project to the menus projects list
     const addProject = (name) => {

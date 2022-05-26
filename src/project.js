@@ -1,6 +1,8 @@
+let projectList = [];
+
 const Project = (title) => {
 
-    let toDoList = ['wa', 9]
+    let toDoList = []
     
     //Will add a to to object to the end of the toDoList
     const addToDo = (name, desc, imp, date) => {
@@ -12,11 +14,15 @@ const Project = (title) => {
         toDoList.splice(index,1)
     }
 
+    const showToDo = () => {
+        return toDoList;
+    }
+
     return {
         title,
         addToDo,
         removeToDo,
-        toDoList,
+        showToDo,
     }
 };
 
@@ -24,4 +30,4 @@ const toDo = (name, desc, imp, date) => {
     return {name, desc, imp, date};
 }
 
-export default Project;
+export {Project, projectList};
