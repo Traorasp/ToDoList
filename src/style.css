@@ -63,9 +63,23 @@ body {
 
 #menu ul li {
     text-align: center;
+    
 }
 
-.project-btn {
+.project {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    max-height: 8vh;
+}
+
+.project button {
+    width: 3vw;
+    height: 3vh;
+    background-color: white;
+}
+
+.create-project-btn {
     font-size: 2rem;
     width: 20vw;
     background-color: white;

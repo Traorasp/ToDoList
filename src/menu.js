@@ -29,17 +29,30 @@ const toDoMenu = (() =>{
         const projectsDisplay = document.createElement('ul');
         menu.appendChild(projectsDisplay);
         projectList.forEach(project => {
-            const projectName = document.createElement('li');
+
+            const projectHolder = document.createElement('li')
+            projectHolder.classList.add('project');
+            projectsDisplay.appendChild(projectHolder);
+
+            const projectName = document.createElement('p');
             projectName.textContent = `${project.title}`;
             projectName.addEventListener('click', (e) => {
                 loadToDoList(findInd(e.target.textContent));
             });
-            projectsDisplay.appendChild(projectName);
+            projectHolder.appendChild(projectName);
 
+            const removeProjectBtn = document.createElement('button');
+            removeProjectBtn.textContent = 'X';
+            removeProjectBtn.classList.add(`btn-${project.title}`)
+            projectHolder.appendChild(removeProjectBtn);
+            removeProjectBtn.addEventListener('click', (e) => {
+                projectList.splice(findInd(e.target.classList[0].substring(4)),1)
+                updateMenu();
+            })
         });
 
         const createProjectBtn = document.createElement('button');
-        createProjectBtn.classList.add('project-btn')
+        createProjectBtn.classList.add('create-project-btn')
         createProjectBtn.textContent = '+';
         projectsDisplay.appendChild(createProjectBtn);
         createProjectBtn.addEventListener('click', displayForm);
