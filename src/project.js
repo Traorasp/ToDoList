@@ -11,7 +11,7 @@ const Project = (title) => {
 
     //Will remove the to do at the specified index
     const removeToDo = (index) => {
-        toDoList.splice(index,1)
+        toDoList.splice(index,1);
     }
 
     const showToDo = () => {

@@ -17,7 +17,7 @@ const loadToDoList = ((e) => {
     toDoBody.appendChild(toDoBtn);
     toDoBtn.addEventListener('click', (e) => {
         let ind = e.target.classList[0];
-        projectList[ind].addToDo('space','fire','earth','water') 
+        projectList[ind].addToDo('space','fire', 'Not Important','earth') 
         loadToDoList(ind);
     })
 
@@ -28,8 +28,7 @@ const loadToDoList = ((e) => {
     let projectsToDo = project.showToDo()
     projectsToDo.forEach(toDo => {
         const toDoObj = document.createElement('div');
-        toDoObj.classList.add('to-do')
-        toDoBody.appendChild(toDoObj);
+        toDoObj.classList.add('to-do');
         
         const toDoName = document.createElement('h3');
         toDoName.textContent = toDo.name;
@@ -42,6 +41,31 @@ const loadToDoList = ((e) => {
         const toDoDate = document.createElement('h3');
         toDoDate.textContent = toDo.date;
         toDoObj.appendChild(toDoDate);
+
+        let ind = projectsToDo.findIndex((elem) => {return elem == toDo});
+        const deleteBtn = document.createElement('button');
+        toDoBtn.classList.add(`${ind}`);
+        deleteBtn.textContent = 'X';
+        toDoObj.appendChild(deleteBtn);
+        deleteBtn.addEventListener('click', (btn) => {
+            let ind = btn.target.classList[0];
+            project.removeToDo(ind); 
+            loadToDoList(e);
+        })
+
+        switch (toDo.imp) {
+            case 'Not Important':
+                toDoObj.classList.add('not-imp');
+                break;
+            case 'Important':
+                toDoObj.classList.add('imp');
+                break;
+            case 'Urgent':
+                toDoObj.classList.add('urgent');
+                break;
+        }
+
+        toDoBody.appendChild(toDoObj);
     });
 
 });

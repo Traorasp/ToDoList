@@ -45,3 +45,23 @@ body {
     background-color: rgb(255, 249, 144);
     grid-column: 2/3;
 }
+
+.to-do {
+    display: flex;
+    border: black solid 2px;
+    border-radius: 6px;
+    padding: 0 16px;
+    justify-content: space-between;
+}
+
+.not-imp {
+    background-color: greenyellow;
+}
+
+.imp {
+    background-color: orange;
+}
+
+.urgent {
+    background-color: rgb(255, 0, 0);
+}
