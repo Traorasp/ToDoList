@@ -1,5 +1,6 @@
 import {Project, projectList} from './project.js';
 import loadToDoList from './to-do-list.js';
+import loadField from './loadField.js';
 
 const toDoMenu = (() =>{
 
@@ -7,6 +8,7 @@ const toDoMenu = (() =>{
     const updateMenu = () => {
         const body = document.querySelector('body');
         const menu = document.getElementById('menu');
+        menu.innerHTML = '';
 
         const title = document.createElement('h1');
         title.textContent = 'Menu';
@@ -33,27 +35,28 @@ const toDoMenu = (() =>{
                 loadToDoList(findInd(e.target.textContent));
             });
             projectsDisplay.appendChild(projectName);
+
         });
+
+        const createProjectBtn = document.createElement('button');
+        createProjectBtn.classList.add('project-btn')
+        createProjectBtn.textContent = '+';
+        projectsDisplay.appendChild(createProjectBtn);
+        createProjectBtn.addEventListener('click', displayForm);
     };
+
+    const displayForm = () => {
+        loadField.show();
+    }
 
     const findInd = (name) => {
         return projectList.findIndex((project) => {
             return `${project.title}` == `${name}`}); 
     }
-
-    //Will add a project to the menus projects list
-    const addProject = (name) => {
-        projectList.push(Project(name));
-    };
-
-    //Takes user to project designated
-    const openProject = (proj) => {
-
-    }
     
     return {
         updateMenu,
-        addProject,
+        displayForm,
     }
 
 })();

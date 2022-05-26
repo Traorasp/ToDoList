@@ -10,10 +10,6 @@ toDo.setAttribute('id', 'to-do');
 body.appendChild(toDo);
 
 
-toDoMenu.addProject("Bob");
-
-toDoMenu.addProject("lock");
-
 
 toDoMenu.updateMenu();
 
