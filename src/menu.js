@@ -14,14 +14,6 @@ const toDoMenu = (() =>{
         title.textContent = 'Menu';
         menu.appendChild(title);
 
-        const today = document.createElement('h2');
-        today.textContent = 'Today';
-        menu.appendChild(today);
-    
-        const notes = document.createElement('h2');
-        notes.textContent = 'Notes';
-        menu.appendChild(notes);
-
         const projectBar = document.createElement('h2');
         projectBar.textContent = 'Projects';
         menu.appendChild(projectBar);

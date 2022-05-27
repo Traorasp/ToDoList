@@ -1,5 +1,3 @@
-let projectList = [];
-
 const Project = (title) => {
 
     let toDoList = []
@@ -29,5 +27,7 @@ const Project = (title) => {
 const toDo = (name, desc, imp, date) => {
     return {name, desc, imp, date};
 }
+
+let projectList = [Project('Today')];
 
 export {Project, projectList};

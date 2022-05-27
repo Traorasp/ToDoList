@@ -9,8 +9,5 @@ const toDo = document.createElement('div');
 toDo.setAttribute('id', 'to-do');
 body.appendChild(toDo);
 
-
-
-
 toDoMenu.updateMenu();
 
