@@ -49,7 +49,7 @@ const loadToDoList = ((e) => {
 
         let ind = projectsToDo.findIndex((elem) => {return elem == toDo});
         const deleteBtn = document.createElement('button');
-        toDoBtn.classList.add(`${ind}`);
+        deleteBtn.classList.add(`${ind}`);
         deleteBtn.textContent = 'X';
         toDoObj.appendChild(deleteBtn);
         deleteBtn.addEventListener('click', (btn) => {
