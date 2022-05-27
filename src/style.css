@@ -23,8 +23,8 @@ body {
     left: 40%;
     top: 35%;
     background-color: white;
-    width: 20vw;
-    height: 40vh;
+    width: 10vw;
+    height: 20vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -93,6 +93,13 @@ body {
     padding: 2.5% 5%;
 }
 
+#list {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    padding: 2vh;
+}
+
 .to-do {
     display: flex;
     border: black solid 2px;
@@ -101,12 +108,26 @@ body {
     justify-content: space-between;
 }
 
+.toDoForm {
+    background-color: white;
+}
+
+.toDoForm fieldset {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+textarea {
+resize: none;
+}
+
 .not-imp {
     background-color: greenyellow;
 }
 
 .imp {
-    background-color: orange;
+    background-color: rgb(255, 128, 0);
 }
 
 .urgent {

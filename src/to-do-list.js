@@ -1,4 +1,5 @@
 import {Project, projectList} from './project.js';
+import loadToDoForm from './toDoForm.js';
 
 const loadToDoList = ((e) => {
 
@@ -8,27 +9,31 @@ const loadToDoList = ((e) => {
     toDoBody.innerHTML = '';
 
     const title = document.createElement('h1');
+    title.setAttribute('id', 'Project-Title')
     title.textContent = project.title;
     toDoBody.appendChild(title);
+
+    const list = document.createElement('div');
+    list.setAttribute('id', 'list');
+    toDoBody.appendChild(list);
 
     const toDoBtn = document.createElement('button');
     toDoBtn.classList.add(`${e}`);
     toDoBtn.textContent = '+';
     toDoBody.appendChild(toDoBtn);
     toDoBtn.addEventListener('click', (e) => {
-        let ind = e.target.classList[0];
-        projectList[ind].addToDo('space','fire', 'Not Important','earth') 
-        loadToDoList(ind);
+        let ind = e.target.classList[0];        
+        let form = document.querySelector('#to-do .hide');
+        form.classList.remove('hide')
     })
 
-    const list = document.createElement('div');
-    list.setAttribute('id', 'list');
-    toDoBody.appendChild(list);
+    loadToDoForm(e);
 
     let projectsToDo = project.showToDo()
     projectsToDo.forEach(toDo => {
         const toDoObj = document.createElement('div');
         toDoObj.classList.add('to-do');
+        list.appendChild(toDoObj);
         
         const toDoName = document.createElement('h3');
         toDoName.textContent = toDo.name;
@@ -53,6 +58,7 @@ const loadToDoList = ((e) => {
             loadToDoList(e);
         })
 
+
         switch (toDo.imp) {
             case 'Not Important':
                 toDoObj.classList.add('not-imp');
@@ -65,7 +71,6 @@ const loadToDoList = ((e) => {
                 break;
         }
 
-        toDoBody.appendChild(toDoObj);
     });
 
 });
