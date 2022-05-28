@@ -1,4 +1,4 @@
-import toDoMenu from "./menu.js";
+import toDoMenu from './menu';
 import './style.css';
 
 const body = document.querySelector('body');
@@ -10,4 +10,3 @@ toDo.setAttribute('id', 'to-do');
 body.appendChild(toDo);
 
 toDoMenu.updateMenu();
-

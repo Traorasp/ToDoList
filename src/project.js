@@ -1,33 +1,30 @@
+const toDo = (name, desc, imp, date) => ({
+  name, desc, imp, date,
+});
+
 const Project = (title) => {
+  const toDoList = [];
 
-    let toDoList = []
-    
-    //Will add a to to object to the end of the toDoList
-    const addToDo = (name, desc, imp, date) => {
-        toDoList.push(toDo(name,desc,imp,date))
-    }
+  // Will add a to to object to the end of the toDoList
+  const addToDo = (name, desc, imp, date) => {
+    toDoList.push(toDo(name, desc, imp, date));
+  };
 
-    //Will remove the to do at the specified index
-    const removeToDo = (index) => {
-        toDoList.splice(index,1);
-    }
+  // Will remove the to do at the specified index
+  const removeToDo = (index) => {
+    toDoList.splice(index, 1);
+  };
 
-    const showToDo = () => {
-        return toDoList;
-    }
+  const showToDo = () => toDoList;
 
-    return {
-        title,
-        addToDo,
-        removeToDo,
-        showToDo,
-    }
+  return {
+    title,
+    addToDo,
+    removeToDo,
+    showToDo,
+  };
 };
 
-const toDo = (name, desc, imp, date) => {
-    return {name, desc, imp, date};
-}
+const projectList = [Project('Today')];
 
-let projectList = [Project('Today')];
-
-export {Project, projectList};
+export { Project, projectList };
